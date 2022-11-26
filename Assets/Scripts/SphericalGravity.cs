@@ -5,10 +5,13 @@ using System.Collections.Generic;
 public class SphericalGravity : MonoBehaviour {
  
     public List<GameObject> objects;
+    public List<GameObject> objectBlacklist;
     public GameObject planet;
     public GameObject playerShip;
  
-    public float gravitationalPull;
+    public float gravitationalPull = 1.0f;
+    public float mass = 1000.0f;
+    
     public float soiFactor = 3.0f;
 
     private void Start()
@@ -31,6 +34,11 @@ public class SphericalGravity : MonoBehaviour {
     }
 
     void FixedUpdate() {
+
+        if (playerShip == null)
+        {
+            return;
+        }
 
         float distancePlanetToPlayer = Vector3.Distance(planet.transform.position, playerShip.transform.position);
 
