@@ -6,6 +6,8 @@ public class CameraFollowPlayer : MonoBehaviour
 {
     GameObject followObject;
 
+    float maxHorizontal = 15.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +17,15 @@ public class CameraFollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, followObject.transform.position.z);
+        if (followObject == null)
+        {
+            return;
+        }
+
+        float newPosX = Mathf.Clamp(followObject.transform.position.x, -maxHorizontal, maxHorizontal);
+        float newPosY = this.gameObject.transform.position.y;
+        float newPosZ = followObject.transform.position.z;
+
+        this.gameObject.transform.position = new Vector3(newPosX, newPosY, newPosZ);
     }
 }
