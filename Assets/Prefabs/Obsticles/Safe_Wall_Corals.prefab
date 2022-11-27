@@ -51,9 +51,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3244156331248651682, guid: 73f49e9b3e7da3c44a7f536e863f6a35, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3244156331248651682, guid: 73f49e9b3e7da3c44a7f536e863f6a35, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3244156331248651682, guid: 73f49e9b3e7da3c44a7f536e863f6a35, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3244156331248651682, guid: 73f49e9b3e7da3c44a7f536e863f6a35, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3244156331248651682, guid: 73f49e9b3e7da3c44a7f536e863f6a35, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3244156331248651682, guid: 73f49e9b3e7da3c44a7f536e863f6a35, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6219554793484285587, guid: 73f49e9b3e7da3c44a7f536e863f6a35, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 832af29bdbaa2ae4f8ab92b00091c366, type: 3}
     - target: {fileID: 6228922825836815651, guid: 73f49e9b3e7da3c44a7f536e863f6a35, type: 3}
       propertyPath: m_Name
-      value: Safe_Wall
+      value: Safe_Wall_Corals
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731956794597485562, guid: 73f49e9b3e7da3c44a7f536e863f6a35, type: 3}
+      propertyPath: m_Size.x
+      value: 25.68456
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731956794597485562, guid: 73f49e9b3e7da3c44a7f536e863f6a35, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2133598
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731956794597485562, guid: 73f49e9b3e7da3c44a7f536e863f6a35, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.04249096
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731956794597485562, guid: 73f49e9b3e7da3c44a7f536e863f6a35, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5760555
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73f49e9b3e7da3c44a7f536e863f6a35, type: 3}
