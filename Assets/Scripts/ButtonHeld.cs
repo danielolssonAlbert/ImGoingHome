@@ -1,10 +1,9 @@
 using UnityEngine;
-using System.Collections;
 using UnityEngine.EventSystems;
 using IGH.Movement;
 
-public class ButtonHeld : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
- 
+public class ButtonHeld : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+{
     public bool buttonPressed;
     public bool buttonRetro = false;
     public PlayerMovement playerMovement;

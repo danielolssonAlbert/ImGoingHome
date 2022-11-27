@@ -22,9 +22,9 @@ public class CameraFollowPlayer : MonoBehaviour
             return;
         }
 
-        float newPosX = Mathf.Clamp(followObject.transform.position.x, -maxHorizontal, maxHorizontal);
-        float newPosY = this.gameObject.transform.position.y;
-        float newPosZ = followObject.transform.position.z;
+        float newPosX = followObject.transform.position.x;//Mathf.Clamp(followObject.transform.position.x, -maxHorizontal, maxHorizontal);
+        float newPosY = followObject.transform.position.y;
+        float newPosZ = this.gameObject.transform.position.z;
 
         this.gameObject.transform.position = new Vector3(newPosX, newPosY, newPosZ);
     }
