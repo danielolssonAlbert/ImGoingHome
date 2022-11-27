@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject losePanel;
     public GameObject winPanel;
+    public GameObject startPanel;
+
     public GameObject gameButton;
 
     public int starFishesCollected = 0;
@@ -54,6 +56,11 @@ public class GameManager : MonoBehaviour
             winPanel.SetActive(true);
             gameButton.SetActive(false);
         }
+    }
+
+    public void HideStartPanel()
+    {
+        startPanel.SetActive(false);
     }
 
     public void IncreseScore()
@@ -108,6 +115,6 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("ArcadyBulletVersion");
+        SceneManager.LoadScene("Level1");
     }
 }
