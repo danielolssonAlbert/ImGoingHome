@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 03888f1d7bae52944a792114e435bc2b
+guid: ff7219df1ccfbd14b8aaa878cc469712
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -11,7 +11,7 @@ TrueTypeFontImporter:
   fontNames:
   - Chalkboard SE
   fallbackFontReferences:
-  - {fileID: 12800000, guid: b113f116edd29a948a6ec2fceaf0bf4a, type: 3}
+  - {fileID: 12800000, guid: 0470a34f2803cda4a88621df93bec822, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
