@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Babies_SkeletonData
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: 7e027dfd4593d0345964b010cf9bf30a, type: 2}
+  - {fileID: 11400000, guid: 6f4b63a808d372142b2a90dc784850e0, type: 2}
   scale: 0.01
   skeletonJSON: {fileID: 4900000, guid: b11bc3567863d3a4684f1d8deb146fca, type: 3}
   isUpgradingBlendModeMaterials: 0
