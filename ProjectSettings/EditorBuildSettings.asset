@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ArcadyBulletVersion.unity
+    path: Assets/Scenes/Level1.unity
     guid: c5640043660572c4b8848c7d3b766837
   m_configObjects: {}
