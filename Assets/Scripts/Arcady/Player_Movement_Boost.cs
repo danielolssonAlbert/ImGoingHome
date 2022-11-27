@@ -44,7 +44,8 @@ public class Player_Movement_Boost : MonoBehaviour, IPointerDownHandler, IPointe
 
             boostVector = (startPosition - currentPosition).normalized;
             boostMultiplyer = (startPosition - currentPosition).magnitude;
-            boostMultiplyer = Mathf.Clamp(boostMultiplyer, 0.0f, 1.0f);
+            // Mathf.Clamp(boostMultiplyer, 0.0f, 1.0f);
+            boostMultiplyer = Mathf.Abs(boostMultiplyer / maxLength);
             
             Debug.DrawLine(center.position, center.position+((Vector3)boostVector*5.0f));
 

@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Obsticle_KillZone : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        string otherTag = other.tag;
+        Debug.Log($" - OnCollisionEnter2D!");
+        string otherTag = other.gameObject.tag;
 
-        if (otherTag != "PlayerShip")
+        if (otherTag == "PlayerShip")
         {
             Debug.Log($" - FAK ending game!");
+            GameManager.Instance.DisplayLoose();
         }
     }
 }
