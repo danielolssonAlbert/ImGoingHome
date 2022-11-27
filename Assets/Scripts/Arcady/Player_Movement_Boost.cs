@@ -13,6 +13,7 @@ public class Player_Movement_Boost : MonoBehaviour, IPointerDownHandler, IPointe
     public Vector2 boostVector;
 
     public Rigidbody2D playerRB;
+    public Animator playerAnimator;
 
     public float boostMultiplyer = 1.0f;
     public float slowdownScalar = 0.2f;
@@ -54,6 +55,8 @@ public class Player_Movement_Boost : MonoBehaviour, IPointerDownHandler, IPointe
                 playerRB.transform.right = ((Vector3)boostVector*5.0f);
             }
 
+            playerAnimator.SetTrigger("aiming");
+
             Debug.Log($" - boostMultiplyer {boostMultiplyer} | boostVector {boostVector} ");
 
             return;
@@ -66,9 +69,22 @@ public class Player_Movement_Boost : MonoBehaviour, IPointerDownHandler, IPointe
             boostVector = Vector3.zero;
             boostMultiplyer = 1.0f;
             Debug.Log($" - SWIM!");
+            playerAnimator.SetTrigger("shoot");
+            playerAnimator.SetBool("isBoosting", true);
             return;
         }
         
+        if (playerRB.velocity.magnitude > 10.0f)
+        {
+            Debug.Log($" - BOOST FRAMES!");
+            return;
+        }
+        else if (playerAnimator.GetBool("isBoosting") == true)
+        {
+            Debug.Log($" - ok we good.");
+            playerAnimator.SetBool("isBoosting", false);
+        }
+
     }
     
     public void OnPointerDown(PointerEventData eventData)
