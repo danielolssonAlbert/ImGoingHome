@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     public GameObject heart3;
 
     public Animator playerAnimator;
-
+    
     private void Awake() 
     { 
         // If there is an instance, and it's not me, delete myself.
@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
     {
         starFishesCollected++;
         starFishText.text = $"{starFishesCollected}";
+        AudioController.Instance.PlayOnEat();
     }
 
     public void GetHit()
@@ -80,6 +81,7 @@ public class GameManager : MonoBehaviour
         if (currentHealth == 2)
         {
             playerAnimator.SetTrigger("hurt");
+            AudioController.Instance.PlayOnHit();
 
             heart3.SetActive(false);
             return;
@@ -88,6 +90,7 @@ public class GameManager : MonoBehaviour
         if (currentHealth == 1)
         {
             playerAnimator.SetTrigger("hurt");
+            AudioController.Instance.PlayOnHit();
 
             heart2.SetActive(false);
             return;
@@ -96,7 +99,7 @@ public class GameManager : MonoBehaviour
         if (currentHealth == 0)
         {
             playerAnimator.SetTrigger("death");
-
+            AudioController.Instance.PlayOnDeath();
             heart1.SetActive(false);
             DisplayLoose();
             return;
