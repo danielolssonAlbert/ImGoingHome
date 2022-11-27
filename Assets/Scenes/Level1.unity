@@ -606,7 +606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &294839054
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2657,7 +2657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1624914688
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4302,34 +4302,6 @@ PrefabInstance:
     - target: {fileID: 2618161272136787581, guid: c9966d29f96174bb0b98549306d6af0a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2618161273405596542, guid: c9966d29f96174bb0b98549306d6af0a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 63.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4067599869506458638, guid: c9966d29f96174bb0b98549306d6af0a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 4067599869506458638, guid: c9966d29f96174bb0b98549306d6af0a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 4067599869506458638, guid: c9966d29f96174bb0b98549306d6af0a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 4067599869506458638, guid: c9966d29f96174bb0b98549306d6af0a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4067599869506458638, guid: c9966d29f96174bb0b98549306d6af0a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 47.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 4067599869506458638, guid: c9966d29f96174bb0b98549306d6af0a, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9966d29f96174bb0b98549306d6af0a, type: 3}
