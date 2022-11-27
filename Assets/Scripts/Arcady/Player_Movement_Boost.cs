@@ -20,6 +20,7 @@ public class Player_Movement_Boost : MonoBehaviour, IPointerDownHandler, IPointe
     private float oldGravity;
 
     public GameObject arrowObject;
+    public ParticleSystem bubblesPS;
 
     private void FixedUpdate()
     {
@@ -76,6 +77,7 @@ public class Player_Movement_Boost : MonoBehaviour, IPointerDownHandler, IPointe
             arrowObject.SetActive(false);
 
             //Debug.Log($" - SWIM!");
+            bubblesPS.Play();
             playerAnimator.SetTrigger("shoot");
             playerAnimator.SetBool("isBoosting", true);
             return;
