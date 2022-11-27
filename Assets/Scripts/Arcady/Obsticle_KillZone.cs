@@ -11,8 +11,8 @@ public class Obsticle_KillZone : MonoBehaviour
 
         if (otherTag == "PlayerShip")
         {
-            Debug.Log($" - FAK ending game!");
-            GameManager.Instance.DisplayLoose();
+            Debug.Log($" - Ouch!");
+            GameManager.Instance.GetHit();
         }
     }
 }

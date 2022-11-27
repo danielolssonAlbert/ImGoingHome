@@ -19,6 +19,8 @@ public class Player_Movement_Boost : MonoBehaviour, IPointerDownHandler, IPointe
     public float slowdownScalar = 0.2f;
     private float oldGravity;
 
+    public GameObject arrowObject;
+
     private void FixedUpdate()
     {
         if (buttonPressed == true)
@@ -48,7 +50,9 @@ public class Player_Movement_Boost : MonoBehaviour, IPointerDownHandler, IPointe
             // Mathf.Clamp(boostMultiplyer, 0.0f, 1.0f);
             boostMultiplyer = Mathf.Abs(boostMultiplyer / maxLength);
             
-            Debug.DrawLine(center.position, center.position+((Vector3)boostVector*5.0f));
+            arrowObject.SetActive(true);
+
+            //Debug.DrawLine(center.position, center.position+((Vector3)boostVector*5.0f));
 
             if (boostVector.magnitude > 0.01f)
             {
@@ -57,7 +61,7 @@ public class Player_Movement_Boost : MonoBehaviour, IPointerDownHandler, IPointe
 
             playerAnimator.SetTrigger("aiming");
 
-            Debug.Log($" - boostMultiplyer {boostMultiplyer} | boostVector {boostVector} ");
+            //Debug.Log($" - boostMultiplyer {boostMultiplyer} | boostVector {boostVector} ");
 
             return;
         }
@@ -68,7 +72,10 @@ public class Player_Movement_Boost : MonoBehaviour, IPointerDownHandler, IPointe
             playerRB.AddForce( boostVector * 880.0f * boostMultiplyer );
             boostVector = Vector3.zero;
             boostMultiplyer = 1.0f;
-            Debug.Log($" - SWIM!");
+            
+            arrowObject.SetActive(false);
+
+            //Debug.Log($" - SWIM!");
             playerAnimator.SetTrigger("shoot");
             playerAnimator.SetBool("isBoosting", true);
             return;
@@ -76,12 +83,12 @@ public class Player_Movement_Boost : MonoBehaviour, IPointerDownHandler, IPointe
         
         if (playerRB.velocity.magnitude > 10.0f)
         {
-            Debug.Log($" - BOOST FRAMES!");
+            //Debug.Log($" - BOOST FRAMES!");
             return;
         }
         else if (playerAnimator.GetBool("isBoosting") == true)
         {
-            Debug.Log($" - ok we good.");
+            //Debug.Log($" - ok we good.");
             playerAnimator.SetBool("isBoosting", false);
         }
 
