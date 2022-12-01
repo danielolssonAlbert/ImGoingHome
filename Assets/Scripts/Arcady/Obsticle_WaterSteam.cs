@@ -10,9 +10,9 @@ public class Obsticle_WaterSteam : MonoBehaviour
     {
         Rigidbody2D otherRB = other.GetComponent<Rigidbody2D>();
 
-        if (otherRB != null)
+        if (otherRB != null &&
+            otherRB.gameObject.tag == "PlayerShip")
         {
-            Debug.Log($" - PUSHING! PUUUUUSH");
             otherRB.AddForce(Vector2.left * waterForce);
         }
     }

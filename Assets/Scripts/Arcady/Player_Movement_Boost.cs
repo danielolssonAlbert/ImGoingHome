@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Player_Movement_Boost : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public bool buttonPressed;
     
+    public Canvas gameCanvas;
+
     public Transform center;
     public Vector2 startPosition;
     public float maxLength;
@@ -22,46 +25,50 @@ public class Player_Movement_Boost : MonoBehaviour, IPointerDownHandler, IPointe
     public GameObject arrowObject;
     public ParticleSystem bubblesPS;
 
+    public Image arrowTipImage;
+    public Image arrowEndImage;
+    
+    public Image joyBack;
+    public Image joyKnob;
+
     private void FixedUpdate()
     {
         if (buttonPressed == true)
         {
-            //Vector3 mousePosition = Input.mousePosition;
             currentPosition = Input.mousePosition;
-            //currentPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            //currentPosition.z = playerRB.transform.position.z;
             currentPosition = startPosition + Vector2.ClampMagnitude(currentPosition - startPosition, maxLength);
 
-            /* Around Squid
-            currentPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            currentPosition.z = playerRB.transform.position.z;
-            currentPosition = center.position + Vector3.ClampMagnitude(currentPosition - center.position, maxLength);
-            */
-            
             Vector3 startLine = Camera.main.ScreenToWorldPoint(startPosition);
-            startLine.z = 1.0f;
-
+            startLine.z = 0.0f;
             Vector3 endLine = Camera.main.ScreenToWorldPoint(currentPosition);
-            endLine.z = 1.0f;
-
-            Debug.DrawLine(startLine, endLine);
-
+            endLine.z = 0.0f;
+            
             boostVector = (startPosition - currentPosition).normalized;
             boostMultiplyer = (startPosition - currentPosition).magnitude;
             // Mathf.Clamp(boostMultiplyer, 0.0f, 1.0f);
             boostMultiplyer = Mathf.Abs(boostMultiplyer / maxLength);
             
-            arrowObject.SetActive(true);
-
-            //Debug.DrawLine(center.position, center.position+((Vector3)boostVector*5.0f));
+            Debug.DrawLine(startPosition, boostVector*boostMultiplyer, Color.green);
+            Debug.DrawLine(center.position, center.position+((Vector3)boostVector*5.0f), Color.red);
 
             if (boostVector.magnitude > 0.01f)
             {
-                playerRB.transform.right = ((Vector3)boostVector*5.0f);
+                float lookaheadLength = 5.0f;
+                playerRB.transform.right = ((Vector3)boostVector*lookaheadLength);
+
+                arrowTipImage.transform.localScale = new Vector3(
+                    arrowTipImage.transform.localScale.x, 
+                    Mathf.Clamp(boostMultiplyer, 0.5f, 1.0f),
+                    arrowTipImage.transform.localScale.z);
+                
+                arrowEndImage.transform.localScale = new Vector3(
+                    arrowEndImage.transform.localScale.x, 
+                    Mathf.Clamp(boostMultiplyer, 0.5f, 1.0f),
+                    arrowEndImage.transform.localScale.z);
             }
 
             playerAnimator.SetTrigger("aiming");
-
+            
             //Debug.Log($" - boostMultiplyer {boostMultiplyer} | boostVector {boostVector} ");
 
             return;
@@ -105,8 +112,7 @@ public class Player_Movement_Boost : MonoBehaviour, IPointerDownHandler, IPointe
 
         Vector3 mousePosition = Input.mousePosition;
         startPosition = mousePosition;
-        //startPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            
+
         buttonPressed = true;
     }
  
@@ -115,5 +121,6 @@ public class Player_Movement_Boost : MonoBehaviour, IPointerDownHandler, IPointe
         playerRB.gravityScale = oldGravity;
 
         buttonPressed = false;
+        joyBack.gameObject.SetActive(false);
     }
 }

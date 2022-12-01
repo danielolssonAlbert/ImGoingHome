@@ -26,7 +26,6 @@ public class Collectable_Food : MonoBehaviour
         yield return new WaitForSeconds(0.20f);
         
         GameManager.Instance.IncreseScore();
-        Debug.Log($" - NOM NOM NOM");
         this.gameObject.SetActive(false);
     }
 }
