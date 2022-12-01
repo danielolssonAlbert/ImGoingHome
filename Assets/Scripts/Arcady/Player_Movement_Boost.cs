@@ -51,6 +51,8 @@ public class Player_Movement_Boost : MonoBehaviour, IPointerDownHandler, IPointe
             Debug.DrawLine(startPosition, boostVector*boostMultiplyer, Color.green);
             Debug.DrawLine(center.position, center.position+((Vector3)boostVector*5.0f), Color.red);
 
+            arrowObject.SetActive(true);
+
             if (boostVector.magnitude > 0.01f)
             {
                 float lookaheadLength = 5.0f;
